@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: chat-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/chat
+    username: root
+    password: r1r2r3		
+mybatis:
+ mapper-locations: classpath:mapper/**/*.xml
+ configuration:
+    map-underscore-to-camel-case: true
