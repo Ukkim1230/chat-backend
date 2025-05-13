@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan({"com.dev.sp.mapper","com.dev.sp.test.mapper"})
+@MapperScan("com.dev.sp.mapper")
 public class ChatServerApplication {
 
 	public static void main(String[] args) {

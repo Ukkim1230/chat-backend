@@ -1,5 +1,7 @@
 package com.dev.sp.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -18,29 +20,30 @@ public class UserVO {
 	 * @Email : 이메일 형식이 아닐때 체크
 	 */
 	//@DecimalMin(value="0.1")
-	private int uiNum;
-	@NotBlank(message = "아이디는 필수입니다.")
-	@Size(min=4, max=30, message="아이디는 4글자 이상 30글자 이하입니다.")
-	//@Min(value=4, message="아이디는 4글자 이상입니다.")
-	private String uiId;
-	@NotBlank(message = "비밀번호는 필수입니다.")
-	@Size(min=8, max=30, message="비밀번호는 8글자 이상 30글자 이하입니다.")
-	private String uiPwd;
-	//@NotEmpty(message = "이름은 필수입니다.") //null 이거나 빈문자열일때 체크
-	@NotBlank(message = "이름은 필수입니다.")
-	private String uiName;
-	private String uiImgName;
-	private String uiImgPath;
-	@NotBlank(message = "주소는 필수입니다.")
-	private String uiAddress1;
-	private String uiAddress2;
-	@NotBlank(message = "전화번호는 필수입니다.")
-	@Pattern(regexp = "^\\d{3}\\d{4}\\d{4}$", message = "올바른 전화번호 형식이 아닙니다.")
-	private String uiPhone;
-	private String uiDesc;
-	private String credat;
-	private String cretim;
-	private String lmodat;
-	private String lmotim;
-	
+	    private int uiNum;
+	    @NotBlank(message = "아이디는 필수입니다.")
+	    @Size(min=4, max=30, message="아이디는 4글자 이상 30글자 이하입니다.")
+	    private String uiId;
+	    @NotBlank(message = "비밀번호는 필수입니다.") 
+	    @Size(min=8, max=30, message="비밀번호는 8글자 이상 30글자 이하입니다.")
+	    private String uiPwd;
+	    //@NotEmpty(message = "이름은 필수입니다.") 
+	    @NotBlank(message = "이름은 필수입니다.")
+	    private String uiName;
+	    private String uiImgName;
+	    private MultipartFile uiImg;
+	    private String uiImgPath;
+	    @NotBlank(message = "주소는 필수입니다.")
+	    private String uiAddress1;
+	    private String uiAddress2;
+	    @NotBlank(message = "전화번호는 필수입니다.")
+	    @Pattern(regexp = "^\\d{3}\\d{4}\\d{4}$", message = "올바른 전화번호 형식이 아닙니다.")
+	    private String uiPhone;
+	    private String uiDesc;
+	    private String uiZip;
+	    private String credat;
+	    private String cretim;
+	    private String lmodat;
+	    private String lmotim;
+	    private String token;
 }
