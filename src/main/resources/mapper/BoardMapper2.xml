@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev.sp.mapper.BoardMapper2">
+	<select id="selectBoardList" resultType="com.dev.sp.vo.BoardVO2">
+		select BI.*,UI.UI_NAME
+		from BOARD_INFO2 BI
+		inner join USER_INFO UI
+		on BI.UI_NUM = UI.UI_NUM
+	</select>
+	<select id="selectBoard" resultType="com.dev.sp.vo.BoardVO2">
+		select BI.*,UI.UI_NAME
+		from
+		BOARD_INFO2 BI
+		inner join USER_INFO UI
+		on BI.UI_NUM = UI.UI_NUM
+		WHERE
+		BI_NUM = #{biNum}
+	</select>
+	<insert id="insertBoard">
+		insert into BOARD_INFO2(BI_TITLE,BI_CONTENT,UI_NUM)
+		VALUES(#{biTitle},#{biContent},#{uiNum});
+	</insert>
+	<update id="updateBoard">
+		update BOARD_INFO2
+		set BI_TITLE=#{biTitle},
+		BI_CONTENT=#{biContent}
+		where BI_NUM=#{biNum}
+	</update>
+	<delete id="deleteBoard">
+		delete from board_info2 where BI_NUM = #{biNum}
+	</delete>
+</mapper>
