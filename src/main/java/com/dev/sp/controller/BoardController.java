@@ -31,6 +31,10 @@ public class BoardController {
 	public BoardVO getBoard(@PathVariable("biNum")int biNum) {
 		return boardService.getBoard(biNum);
 	}
+	@GetMapping("/boards/update/{biNum}")
+	public BoardVO getBoardforUpdate(@PathVariable("biNum")int biNum) {
+		return boardService.getBoardforUpdate(biNum);
+	}
 	@PostMapping("/boards")
 	public int insertBoard(@RequestBody BoardVO board) {
 		return boardService.insertBoard(board);

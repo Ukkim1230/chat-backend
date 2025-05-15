@@ -21,6 +21,9 @@ public class BoardService {
 		boardMapper.updateBoardViewCnt(biNum);
 		return boardMapper.selectBoard(biNum);
 	}
+	public BoardVO getBoardforUpdate(int biNum) {
+		return boardMapper.selectBoard(biNum);
+	}
 	public int insertBoard(BoardVO board) {
 		return boardMapper.insertBoard(board);
 	}

@@ -5,7 +5,7 @@ import java.util.List;
 import com.dev.sp.vo.UserVO;
 
 public interface UserMapper {
-	 List<UserVO> selectUsers();
+	 	List<UserVO> selectUsers(UserVO user);
 	    UserVO selectUser(int uiNum);
 	    UserVO selectUserById(String uiId);
 	    int insertUser(UserVO user);
