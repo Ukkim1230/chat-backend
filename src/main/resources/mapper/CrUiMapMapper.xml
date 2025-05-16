@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev.sp.mapper.CrUiMapMapper">
+	<insert id="insertCrUiMap">
+		insert into CR_UI_MAP(ROOM_ID,UI_NUM)
+		values(#{roomId},#{uiNum})
+	</insert>
+	<delete id="deleteCrUiMap">
+		DELETE FROM CR_UI_MAP
+		WHERE ROOM_ID = #{roomId}
+		AND UI_NUM = #{uiNum}
+	</delete>
+	
+</mapper>

@@ -35,7 +35,8 @@ public class CORSConfig implements WebMvcConfigurer{
 	public void addInterceptors(InterceptorRegistry reg) {
 		reg.addInterceptor(authInterceptor)
 		.addPathPatterns("/**")
-		.excludePathPatterns("/users/join","/users/login","/file/**","/error","/boards/**","/boards2/**");
+		.excludePathPatterns("/users/join","/users/login","/file/**","/error","/boards/**","/boards2/**"
+				,"/chatrooms/**");
 	}
 	
 }
