@@ -8,7 +8,7 @@ public interface ChatRoomMapper {
 
 	List<ChatRoom> selectChatRoomList(ChatRoom chat);
 	ChatRoom selectChatRoom(int roomId);
+	int deleteChatRoom(int roomId);
 	int insertChatRoom(ChatRoom chat);
 	int updateChatRoom(ChatRoom chat);
-	int deleteChatRoom(int roomId);
 }

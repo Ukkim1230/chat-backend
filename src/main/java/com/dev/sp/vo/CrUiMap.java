@@ -11,4 +11,5 @@ public class CrUiMap {
 
 	private int roomId;
 	private int uiNum;
+	private String uiName;
 }

@@ -28,6 +28,10 @@ public class ChatRoomController {
 	public ChatRoom selectChatRoom(@PathVariable("roomId") int roomId){
 		return crService.selectChatRoom(roomId);
 	}
+	@DeleteMapping("/chatrooms/{roomId}")
+	public int deleteChatRoom(@PathVariable("roomId") int roomId){
+		return crService.deleteChatRoom(roomId);
+	}
 	@PostMapping("/chatrooms")
 	public int insertChatRoom(@RequestBody ChatRoom chat){
 		return crService.insertChatRoom(chat);
@@ -36,8 +40,5 @@ public class ChatRoomController {
 	public int updateChatRoom(@RequestBody ChatRoom chat){
 		return crService.updateChatRoom(chat);
 	}
-	@DeleteMapping("/chatrooms/{roomId}")
-	public int deleteChatRoom(@PathVariable("roomId") int roomId){
-		return crService.deleteChatRoom(roomId);
-	}
+	
 }

@@ -2,31 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dev.sp.mapper.ChatRoomMapper">
 	<insert id="insertChatRoom" useGeneratedKeys="true" keyColumn="ROOM_ID" keyProperty="roomId">
-		insert into CHAT_ROOM(NAME,ui_num)
-		values(#{name},#{uiNum});
+		insert into CHAT_ROOM(NAME, UI_NUM)
+		VALUES(#{name},#{uiNum})
 	</insert>
 	<update id="updateChatRoom">
-		update CHAT_ROOM
-		set NAME=#{name},
-		ui_num = #{uiNum}
-		where ROOM_ID = #{roomId}
+		UPDATE CHAT_ROOM
+		SET NAME = #{name}
+		WHERE ROOM_ID = #{roomId}
 	</update>
 	<delete id="deleteChatRoom">
 		delete from CHAT_ROOM where ROOM_ID = #{roomId}
 	</delete>
-	<select id="selectChatRoomList"
-		resultType="com.dev.sp.vo.ChatRoom">
-		select CR.*,UI.UI_NAME
-		from CHAT_ROOM CR
+	<select id="selectChatRoomList" resultType="com.dev.sp.vo.ChatRoom">
+		select CR.*, UI.UI_NAME 
+		from CHAT_ROOM CR 
 		INNER JOIN USER_INFO UI
 		ON CR.UI_NUM = UI.UI_NUM
 		ORDER BY CR.ROOM_ID DESC
 	</select>
 	<select id="selectChatRoom" resultType="com.dev.sp.vo.ChatRoom">
-		select CR.*,UI.UI_NAME
-		from CHAT_ROOM CR
+		select CR.*, UI.UI_NAME 
+		from CHAT_ROOM CR 
 		INNER JOIN USER_INFO UI
 		ON CR.UI_NUM = UI.UI_NUM
-		 where ROOM_ID = #{roomId}
+		where ROOM_ID = #{roomId}
 	</select>
 </mapper>

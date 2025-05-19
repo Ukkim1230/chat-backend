@@ -16,5 +16,5 @@ public class ChatRoom {
 	private String credat;
 	private String cretim;
 	private String lmodat;
-	private String lmotim; 
+	private String lmotim;
 }
