@@ -14,4 +14,5 @@ public class ChatMessage {
 	private String text;
 	private int roomId;
 	private MessageType type;
+	private int targetUiNum;
 }
