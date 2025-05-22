@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthInterceptor implements HandlerInterceptor{
 	@Autowired
-	private JWTUtil jwtUitl;
+	private JWTUtil jwtUtil;
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -30,7 +30,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 		}
 		String token = jwt.substring(7);
 
-		if(!jwtUitl.validToken(token)) {
+		if(!jwtUtil.validToken(token)) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return false;
 		}

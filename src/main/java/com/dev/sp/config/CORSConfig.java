@@ -24,7 +24,7 @@ public class CORSConfig implements WebMvcConfigurer{
 	}
 	
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry reg) {
+	public void addResourceHandlers(ResourceHandlerRegistry reg) { //http 통신만 intercept 함
 		reg.addResourceHandler("/file/**")
 		.addResourceLocations("file:////" + FileUploadUtil.ROOT)
 		.setCachePeriod(36000)
@@ -35,8 +35,7 @@ public class CORSConfig implements WebMvcConfigurer{
 	public void addInterceptors(InterceptorRegistry reg) {
 		reg.addInterceptor(authInterceptor)
 		.addPathPatterns("/**")
-		.excludePathPatterns("/users/join","/users/login","/file/**","/error","/boards/**","/boards2/**"
-				,"/chatrooms/**");
+		.excludePathPatterns("/users/join","/users/login","/file/**","/error","/boards/**","/boards2/**");
 	}
 	
 }

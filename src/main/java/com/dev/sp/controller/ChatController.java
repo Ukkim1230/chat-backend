@@ -24,7 +24,7 @@ public class ChatController {
 	
 	@MessageMapping("/chat/message")
 	public void sendMessage(@Payload ChatMessage msg) {
-		String destination = "/topic/room" + msg.getRoomId();
+		String destination = "/topic/room/" + msg.getRoomId();
 		if(msg.getType() == MessageType.WHISPER) {
 			smt.convertAndSend(destination +"/"+msg.getUiNum(),msg);
 			destination += "/" + msg.getTargetUiNum();
